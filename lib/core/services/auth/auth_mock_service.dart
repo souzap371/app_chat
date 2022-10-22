@@ -7,10 +7,10 @@ import 'package:chat/core/services/auth/auth_service.dart';
 
 class AuthMockService implements AuthService {
   static final _defaultUser = ChatUser(
-    id: '1',
-    name: 'Teste',
-    email: 'teste@cod3r.com.br',
-    imageUrl: 'assets/images/avatar.png',
+    id: '456',
+    name: 'Ana',
+    email: 'ana@cod3r.com.br',
+    imageURL: 'assets/images/avatar.png',
   );
 
   static Map<String, ChatUser> _users = {
@@ -41,7 +41,7 @@ class AuthMockService implements AuthService {
       id: Random().nextDouble().toString(),
       name: name,
       email: email,
-      imageUrl: image?.path ?? 'assets/images/avatar.png',
+      imageURL: image?.path ?? 'assets/images/avatar.png',
     );
 
     _users.putIfAbsent(email, () => newUser);
