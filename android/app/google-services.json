@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "570657611308",
+    "project_id": "cod3r-chat-fd407",
+    "storage_bucket": "cod3r-chat-fd407.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570657611308:android:eb461413ffc7e7ce6d3b89",
+        "android_client_info": {
+          "package_name": "br.com.pablo.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570657611308-7aednlnbnpd09vcq9ajeg8i431i0suk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-621GhAq7OctSZm4xiRxs4QptkvAuc4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570657611308-7aednlnbnpd09vcq9ajeg8i431i0suk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
