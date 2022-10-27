@@ -11,9 +11,10 @@ class NotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final service = Provider.of<ChatNotificationService>(context);
     final items = service.items;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Minhas Notificações.'),
+        title: const Text('Minhas Notificações.'),
       ),
       body: ListView.builder(
         itemCount: service.itemsCount,

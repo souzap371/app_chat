@@ -18,7 +18,7 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cod3r Chat'),
+        title: const Text('Cod3r Chat'),
         actions: [
           DropdownButtonHideUnderline(
             child: DropdownButton(
@@ -31,7 +31,7 @@ class ChatPage extends StatelessWidget {
                   value: 'logout',
                   child: Container(
                     child: Row(
-                      children: [
+                      children: const [
                         Icon(
                           Icons.exit_to_app,
                           color: Colors.black87,

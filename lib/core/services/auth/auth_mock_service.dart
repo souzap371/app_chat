@@ -13,7 +13,7 @@ class AuthMockService implements AuthService {
     imageURL: 'assets/images/avatar.png',
   );
 
-  static Map<String, ChatUser> _users = {
+  static final Map<String, ChatUser> _users = {
     _defaultUser.email: _defaultUser,
   };
   static ChatUser? _currentUser;
@@ -23,14 +23,17 @@ class AuthMockService implements AuthService {
     _updateUser(_defaultUser);
   });
 
+  @override
   ChatUser? get currentUser {
     return _currentUser;
   }
 
+  @override
   Stream<ChatUser?> get userChanges {
     return _userStream;
   }
 
+  @override
   Future<void> signup(
     String name,
     String email,
@@ -48,10 +51,12 @@ class AuthMockService implements AuthService {
     _updateUser(newUser);
   }
 
+  @override
   Future<void> login(String email, String password) async {
     _updateUser(_users[email]);
   }
 
+  @override
   Future<void> logout() async {
     _updateUser(null);
   }

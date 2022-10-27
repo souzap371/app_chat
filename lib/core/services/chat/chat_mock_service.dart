@@ -6,38 +6,15 @@ import 'package:chat/core/services/chat/chat_service.dart';
 import 'dart:async';
 
 class ChatMockService implements ChatService {
-  static final List<ChatMessage> _msgs = [
-    //ChatMessage(
-    //  id: '1',
-    //  text: 'Bom dia',
-    //  createAt: DateTime.now(),
-    //  userId: '123',
-    //  userName: 'Bia',
-    //  userImageURL: 'assets/images/avatar.png',
-    //),
-    //ChatMessage(
-    //  id: '2',
-    //  text: 'Bom dia. Teremos reunião hoje?',
-    //  createAt: DateTime.now(),
-    //  userId: '456',
-    //  userName: 'Ana',
-    //  userImageURL: 'assets/images/avatar.png',
-    //),
-    //ChatMessage(
-    //  id: '1',
-    //  text: 'Sim. Pode ser agora!',
-    //  createAt: DateTime.now(),
-    //  userId: '123',
-    //  userName: 'Bia',
-    //  userImageURL: 'assets/images/avatar.png',
-    //),
-  ];
-  static MultiStreamController<List<dynamic>>? _controller;
+  static final List<ChatMessage> _msgs = [];
+
+  static MultiStreamController<List<ChatMessage>>? _controller;
   static final _msgsStream = Stream<List<ChatMessage>>.multi((controller) {
     _controller = controller;
     controller.add(_msgs);
   });
 
+  @override
   Stream<List<ChatMessage>> messagesStream() {
     return _msgsStream;
   }
@@ -46,7 +23,7 @@ class ChatMockService implements ChatService {
     final newMessage = ChatMessage(
       id: Random().nextDouble().toString(),
       text: text,
-      createAt: DateTime.now(),
+      createdAt: DateTime.now(),
       userId: user.id,
       userName: user.name,
       userImageURL: user.imageURL,

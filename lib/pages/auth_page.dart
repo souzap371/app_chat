@@ -17,6 +17,7 @@ class _AuthPageState extends State<AuthPage> {
 
   Future<void> _handleSubmit(AuthFormData formData) async {
     try {
+      if (!mounted) return;
       setState(() => _isLoading = true);
 
       if (formData.isLogin) {
@@ -37,6 +38,7 @@ class _AuthPageState extends State<AuthPage> {
     } catch (error) {
       //Tratar erro!
     } finally {
+      if (!mounted) return;
       setState(() => _isLoading = false);
     }
   }
@@ -54,10 +56,10 @@ class _AuthPageState extends State<AuthPage> {
           ),
           if (_isLoading)
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromRGBO(0, 0, 0, 0.5),
               ),
-              child: Center(
+              child: const Center(
                 child: CircularProgressIndicator(),
               ),
             ),
