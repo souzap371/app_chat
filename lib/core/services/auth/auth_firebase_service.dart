@@ -46,8 +46,6 @@ class AuthFirebaseService implements AuthService {
     //1. Upload da foto do usuário
     final imageName = '${credential.user!.uid}.jpg';
     final imageURL = await _uploadUserImage(image, imageName);
-    print(imageName);
-    print(imageURL);
 
     //2. Atualizar os atributos do usuário
     await credential.user?.updateDisplayName(name);
@@ -77,8 +75,6 @@ class AuthFirebaseService implements AuthService {
     final imageRef = storage.ref().child('user_images').child(imageName);
     await imageRef.putFile(image).whenComplete(() {});
     return await imageRef.getDownloadURL();
-
-    print(_uploadUserImage);
   }
 
   Future<void> _saveChatUser(ChatUser user) async {
